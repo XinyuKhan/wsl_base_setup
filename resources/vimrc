@@ -1,0 +1,91 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"-------------------------------------
+" vim-kalisi theme
+Bundle 'https://github.com/freeo/vim-kalisi'
+
+"--------------------------------------
+Plugin 'preservim/nerdtree'
+"
+Plugin 'tc50cal/vim-terminal'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'hzchirs/vim-material'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this lineset nu
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+syntax on
+
+"colorscheme evening
+
+" colorscheme kalisi
+colorscheme vim-material
+
+set background=light
+" or 
+" set background=dark
+ set t_Co=256
+
+ " in case t_Co alone doesn't work, add this as well:
+ " let &t_AB="\e[48;5;%dm"
+ " let &t_AF="\e[38;5;%dm"
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
+" let g:airline_theme='kalisi'
+let g:airline_theme='material'
+
+" Dark
+"set background=dark
+"colorscheme vim-material
+
+" Palenight
+"let g:material_style='palenight'
+"set background=dark
+"colorscheme vim-material
+
+" Oceanic
+"let g:material_style='oceanic'
+"set background=dark
+"colorscheme vim-material
+
+" Light
+set background=light
+colorscheme vim-material
+
+
+
+let g:airline#extensions#tabline#enabled = 1 " Use the airline tabline (replacement for buftabline)
+
+let g:cpp_member_variable_highlight = 1
+let g:cpp_posix_standard = 1
+
+
+set nu
