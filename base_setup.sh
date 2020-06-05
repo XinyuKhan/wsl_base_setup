@@ -56,6 +56,7 @@ chsh -s /bin/zsh $CALL_USER
 
 SSHD_CONFIG=/etc/ssh/sshd_config
 sed -ri 's/^#?PasswordAuthentication\s+.*/PasswordAuthentication yes/' ${SSHD_CONFIG}
+sed -ri 's/^#?Port\s+.*/Port 2222/' ${SSHD_CONFIG}
 grep -q "AllowUsers ${CALL_USER}" ${SSHD_CONFIG} || echo "AllowUsers ${CALL_USER}" >> ${SSHD_CONFIG}
 
 apt clean -y;
