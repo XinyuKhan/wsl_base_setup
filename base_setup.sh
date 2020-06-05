@@ -42,11 +42,11 @@ CALL_USER_SCRIPT="sed -ri '$ZSH_COFIG_SED_SCRIPT' /tmp/resources/zshrc"
 sudo -H -u $CALL_USER bash -c "$CALL_USER_SCRIPT"
 CALL_USER_SCRIPT="cp -f /tmp/resources/zshrc /home/$CALL_USER/.zshrc"
 sudo -H -u $CALL_USER bash -c "$CALL_USER_SCRIPT"
-CALL_USER_SCRIPT="unzip -f /tmp/resources/oh-my-zsh.zip -d /home/$CALL_USER/.oh-my-zsh"
+CALL_USER_SCRIPT="unzip -o /tmp/resources/oh-my-zsh.zip -d /home/$CALL_USER/.oh-my-zsh"
 sudo -H -u $CALL_USER bash -c "$CALL_USER_SCRIPT"
 CALL_USER_SCRIPT="cp -f /tmp/resources/vimrc /home/$CALL_USER/.vimrc"
 sudo -H -u $CALL_USER bash -c "$CALL_USER_SCRIPT"
-CALL_USER_SCRIPT="unzip -f /tmp/resources/vim.zip -d /home/$CALL_USER/.vim"
+CALL_USER_SCRIPT="unzip -o /tmp/resources/vim.zip -d /home/$CALL_USER/.vim"
 sudo -H -u $CALL_USER bash -c "$CALL_USER_SCRIPT"
 
 chsh -s /bin/zsh $CALL_USER
