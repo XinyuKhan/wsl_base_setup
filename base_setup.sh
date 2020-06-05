@@ -34,6 +34,8 @@ apt update && apt install -y\
     python3-tk mesa-utils libpcre3-dev xvfb clang cmake sudo;  \
 
 
+dpkg-reconfigure openssh-server
+
 echo $CALL_USER
 ZSH_COFIG_SED_SCRIPT="s/##ZSH_USER##/$CALL_USER/"
 CALL_USER_SCRIPT="sed -ri '$ZSH_COFIG_SED_SCRIPT' /tmp/resources/zshrc"
